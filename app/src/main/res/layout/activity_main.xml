@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-    >
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_edt_name"
-                android:hint="Your Name"
-        />
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_edt_address"
-                android:hint="Your Address"
-        />
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_btn_save"
-                android:hint="Save"
-        />
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/main_edt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        app:layout_constraintBottom_toTopOf="@+id/main_edt_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-    >
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_btn_refresh"
-                android:hint="Segarkan Daftar"
-        />
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/main_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-        >
+    <EditText
+        android:id="@+id/main_edt_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Address"
+        app:layout_constraintBottom_toTopOf="@+id/main_btn_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edt_name" />
 
-        </android.support.v7.widget.RecyclerView>
+    <Button
+        android:id="@+id/main_btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Save"
+        app:layout_constraintBottom_toTopOf="@+id/main_btn_refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edt_address" />
 
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/main_btn_refresh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Segarkan Daftar"
+        app:layout_constraintBottom_toTopOf="@+id/main_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_save" />
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_refresh"
+        tools:listitem="@layout/card_manusia">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
