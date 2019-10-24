@@ -14,3 +14,4 @@ CRUD SQLite using Anko(Android Kotlin)
 4. Delete data.
 
 Pull Request(PRs) are welcome.
+Pull Hacktober hehe
